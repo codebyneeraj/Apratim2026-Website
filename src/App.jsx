@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import events from "./data/events.js";
 import { contacts, committee } from "./data/depts.js";
+import depts from "./data/depts.js";
+import EventsSection from "./events/EventsSection.jsx";
 
 const cats = Object.keys(events);
 const NAV = [["home", "Home"], ["events", "Events"], ["about", "About Us"], ["contact", "Contact Us"]];
@@ -582,6 +584,7 @@ export default function App() {
           </div>
           <button className="vase-arrow next" aria-label="Next event category" onClick={() => stepFocus(1)}>›</button>
         </div>
+        <EventsSection />
       </section>
 
       <div id="modal" hidden={!cat} onClick={e => e.target.id === "modal" && setCat(null)}>
